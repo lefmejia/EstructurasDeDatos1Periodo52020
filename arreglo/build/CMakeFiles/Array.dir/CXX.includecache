@@ -6,21 +6,21 @@
 
 #IncludeRegexTransform: 
 
-/home/ubuntu/arreglo/array.cpp
+/home/ubuntu/EstructurasDeDatosI/arreglo/array.cpp
 iostream
 -
 array.h
-/home/ubuntu/arreglo/array.h
+/home/ubuntu/EstructurasDeDatosI/arreglo/array.h
 
-/home/ubuntu/arreglo/array.h
+/home/ubuntu/EstructurasDeDatosI/arreglo/array.h
 initializer_list
 -
 array.cpp
-/home/ubuntu/arreglo/array.cpp
+/home/ubuntu/EstructurasDeDatosI/arreglo/array.cpp
 
-/home/ubuntu/arreglo/main.cpp
+/home/ubuntu/EstructurasDeDatosI/arreglo/main.cpp
 iostream
 -
 array.h
-/home/ubuntu/arreglo/array.h
+/home/ubuntu/EstructurasDeDatosI/arreglo/array.h
 

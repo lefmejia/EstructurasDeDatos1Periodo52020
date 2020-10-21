@@ -45,19 +45,20 @@ int main(int argc, char *argv[])
 
     arr3.print();
     std::cout << '\n';
+    std::cout << '\n';
 
-    /*Array<double> arrd({0.4545, 3.14159, 3.12, 0.004});
+    Array<double> arrd({0.4545, 3.14159, 3.12, 0.004});
     Array<std::string> arrs({"juan", "pedro", "maria", "ana"});
 
     std::cout << "String array\n";
-    arrs.sort();
+    arrs.insertionSort();
     arrs.print();
     std::cout << '\n';
 
     std::cout << "Double array\n";
     arrd.sort();
     arrd.print();
-    std::cout << '\n';*/
+    std::cout << '\n';
 
     return 0;
 }
