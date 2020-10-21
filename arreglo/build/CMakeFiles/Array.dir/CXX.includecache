@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ubuntu/arreglo/array.cpp
+iostream
+-
+array.h
+/home/ubuntu/arreglo/array.h
+
+/home/ubuntu/arreglo/array.h
+initializer_list
+-
+array.cpp
+/home/ubuntu/arreglo/array.cpp
+
+/home/ubuntu/arreglo/main.cpp
+iostream
+-
+array.h
+/home/ubuntu/arreglo/array.h
+

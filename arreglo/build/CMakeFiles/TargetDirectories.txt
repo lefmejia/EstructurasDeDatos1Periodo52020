@@ -1,0 +1,3 @@
+/home/ubuntu/arreglo/build/CMakeFiles/edit_cache.dir
+/home/ubuntu/arreglo/build/CMakeFiles/rebuild_cache.dir
+/home/ubuntu/arreglo/build/CMakeFiles/Array.dir
