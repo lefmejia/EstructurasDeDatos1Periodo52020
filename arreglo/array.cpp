@@ -109,6 +109,24 @@ void Array<TElem>::sort()
 }
 
 template<typename TElem>
+void Array<TElem>::insertionSort()
+{
+    for (int i = 0; i < size_; i++)
+    {
+       int j = i;
+
+        while(j>0 && arr[j-1] > arr[j])
+        {
+            TElem temp = arr[j-1];
+            arr[j-1] = arr[j];
+            arr[j] = temp;
+
+            j--;
+        }
+    }
+}
+
+template<typename TElem>
 void Array<TElem>::print()
 {
     std::cout << "[ ";

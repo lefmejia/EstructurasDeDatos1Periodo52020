@@ -33,9 +33,10 @@ int main(int argc, char *argv[])
     int max = arr.findMaxIndex(0);
     std::cout << "Maximum is at position " << max << '\n';
 
-    std::cout<<"Elemento maximo es: "<<arr.findMaxElement()<<std::endl;
+    std::cout<<"Maximum element is: "<<arr.findMaxElement()<<std::endl;
 
-    arr.sort();
+    //arr.sort();
+    arr.insertionSort();
     arr.print();
     std::cout << '\n';
 
