@@ -127,7 +127,7 @@ void Array<TElem>::insertionSort()
 }
 
 template<typename TElem>
-void Array<TElem>::print()
+void Array<TElem>::print() const
 {
     std::cout << "[ ";
     bool first = true;

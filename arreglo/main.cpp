@@ -37,11 +37,10 @@ int main(int argc, char *argv[])
 
     //arr.sort();
     arr.insertionSort();
-    arr.print();
-    std::cout << '\n';
+    //arr.print();
+    std::cout << arr << '\n';
 
-    arr2.print();
-    std::cout << '\n';
+    std::cout << arr2 << '\n';
 
     arr3.print();
     std::cout << '\n';

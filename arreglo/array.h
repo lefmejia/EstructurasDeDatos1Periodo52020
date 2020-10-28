@@ -2,7 +2,7 @@
 #define _ARRAY_H_
 
 #include <initializer_list>
-
+#include <iosfwd>
 template <typename TElem>
 class Array
 {
@@ -19,7 +19,7 @@ public:
 
     Array& operator=(const Array& rhs);
 
-    void print();
+    void print() const;
     int find(TElem element);
     int findMinIndex(int pos);
     int findMaxIndex(int pos);
@@ -39,6 +39,13 @@ private:
     int size_;
     TElem *arr;
 };
+
+template <typename T>
+std::ostream& operator << (std::ostream& out, const Array<T> arr)
+{
+    arr.print();
+    return out;
+}
 
 #include "array.cpp"
 
