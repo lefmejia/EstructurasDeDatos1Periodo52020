@@ -9,10 +9,24 @@ int main(int argc, char *argv[])
     l1.pushBack(10);
     l1.pushBack(20);
     l1.pushBack(30);
+    l1.pushBack(40);
+    l1.pushBack(50);
 
-    l1.print();
+    std::cout << l1 <<'\n';
 
-    std::cout<<'\n';
+    std::cout<<"Max element: "<< l1.findMax() << "\n\n";
+    std::cout<<"Min element: "<< l1.findMin() << "\n\n";
 
+    int elem = 30;
+
+    if(l1.find(elem)->data==elem)
+    {
+        std::cout<<"Elemento encontrado";
+    }
+    else
+    {
+        std::cout<<"Elemento no encontrado \n\n";
+    }
+    
     return 0;
 }

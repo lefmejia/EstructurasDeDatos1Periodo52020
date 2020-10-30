@@ -1,5 +1,6 @@
 #ifndef _LINKED_LIST_H_
 #define _LINKED_LIST_H_
+#include <iostream>
 
 class LinkedList
 {
@@ -11,6 +12,12 @@ public:
             Node(int val)
             :data(val)
             {}
+
+            friend std::ostream& operator << (std::ostream& out, const Node *nd)
+            {
+                std::cout << nd->data;
+                return out; 
+            }
             Node *next;
             int data;
         private:
@@ -22,6 +29,11 @@ public:
     :head(nullptr), tail(nullptr)
     {}
 
+    LinkedList(const std::initializer_list<int>& init);
+    LinkedList(const LinkedList& other);
+
+    ~LinkedList();
+
     int size() const;
 
     void print() const;
@@ -30,8 +42,13 @@ public:
     Node *find(int elem);
     Node *findMin();
     Node *findMax();
+    void reverse();
 
-    //friend std::ostream& operator << (std::ostream out, const LinkedList& lst); 
+    friend std::ostream& operator << (std::ostream& out, const LinkedList lst)
+    {
+        lst.print();
+        return out; 
+    }
 
 private:
     Node* head;

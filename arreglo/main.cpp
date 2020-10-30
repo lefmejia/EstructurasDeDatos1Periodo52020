@@ -1,5 +1,23 @@
 #include <iostream>
-#include "array.h"
+#include <array>
+#include <algorithm>
+
+template <typename T, size_t size>
+std::ostream& operator << (std::ostream& out, const std::array<T,size> arr)
+{
+    std::cout << "[ ";
+    bool first = true;
+
+    for (int i = 0; i < size; i++)
+    {
+        if (first) first = false;
+        else std::cout << ", ";
+
+        std::cout << arr[i];
+    }
+    std::cout << " ]";
+    return out;
+}
 
 int main(int argc, char *argv[])
 {
@@ -10,23 +28,30 @@ int main(int argc, char *argv[])
     }
     int element = std::strtol(argv[1], nullptr, 10);
 
-    Array<int> arr({59, 13, 46, 9, 33, 55, 15, 79, 92, 6, 46});
-    Array<int> arr2(32);
-    Array<int> arr3(arr);
+    std::array<int,11> arr({59, 13, 46, 9, 33, 55, 15, 79, 92, 6, 46});
+    std::array<int,11> arr2;
+    std::array<int, 11> arr3(arr);
     
     arr2 = arr;
-
-    std::cout << "Array 2\n";
-    arr2.print();
+    std::cout <<arr;
+    std::cout << "\nArray 2\n";
+    std::cout <<arr2;
     std::cout << '\n';
 
-    int idx = arr.find(element);
+    auto it = std::find(arr.begin(), arr.end(), element);
+    //int idx = arr.find(element);
 
-    if (idx != -1)
-        std::cout << element << " is at position " << idx << '\n';
+    if (it != arr.end())
+        std::cout << element << " is at position " << std::distance(arr.begin(), it) << '\n';
     else
         std::cout << "Cannot find element in array\n";
 
+    std::sort(arr.begin(), arr.end(), [](int a, int b){ return a>b;});
+
+    std::cout <<'\n'<<arr;
+    std::cout << "\nArray 2\n";
+    std::cout <<arr2<<'\n';
+    /*
     int min = arr.findMinIndex(0);
     std::cout << "Minimun is at position " << min << '\n';
 
@@ -58,6 +83,6 @@ int main(int argc, char *argv[])
     arrd.sort();
     arrd.print();
     std::cout << '\n';
-
+    */
     return 0;
 }
