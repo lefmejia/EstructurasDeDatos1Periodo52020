@@ -10,7 +10,7 @@ public:
     {
         public:
             Node(int val)
-            :data(val)
+            :data(val), next(nullptr)
             {}
 
             friend std::ostream& operator << (std::ostream& out, const Node *nd)
@@ -29,7 +29,7 @@ public:
     :head(nullptr), tail(nullptr)
     {}
 
-    LinkedList(const std::initializer_list<int>& init);
+     LinkedList(const std::initializer_list<int>& init);
     LinkedList(const LinkedList& other);
 
     ~LinkedList();
@@ -53,7 +53,7 @@ public:
 private:
     Node* head;
     Node* tail;
-
+    void deleteList(Node* nd);
 };
 
 #endif

@@ -1,5 +1,50 @@
 #include "linked_list.h"
 #include <iostream>
+
+LinkedList::LinkedList(const std::initializer_list<int>& init)
+{
+    head = nullptr;
+    tail = nullptr;
+    for(int n: init)
+    {
+        pushBack(n);
+    }
+}
+
+LinkedList::LinkedList(const LinkedList& other)
+{
+    head = nullptr;
+    tail=nullptr;
+    Node* newn = other.head;
+    while(newn!=nullptr)
+    {
+        pushBack(newn->data);
+        newn = newn->next;
+    }
+}
+
+LinkedList::~LinkedList()
+{
+    deleteList(head);
+}
+
+void LinkedList::deleteList(Node* nd)
+{
+
+    if(nd->next==nullptr)
+    {
+        delete nd;
+        return;
+    }
+    else
+    {
+        deleteList(nd->next);
+        delete nd;
+        return;
+    }
+    
+}
+
 int LinkedList::size() const
 {
     if(head==nullptr)
@@ -111,4 +156,28 @@ LinkedList::Node* LinkedList::findMin()
     }
 
     return min;
+}
+
+void LinkedList::reverse()
+{
+    LinkedList newList;
+
+    Node* n = head;
+    while(n!= nullptr)
+    {
+        newList.pushFront(n->data);
+        n = n->next;
+    }
+
+    deleteList(head);
+    head = nullptr;
+    tail = nullptr;
+
+    n = newList.head;
+
+    while(n!= nullptr)
+    {
+        pushBack(n->data);
+        n = n->next;
+    }
 }

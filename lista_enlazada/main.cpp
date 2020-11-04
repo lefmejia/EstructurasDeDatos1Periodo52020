@@ -21,12 +21,20 @@ int main(int argc, char *argv[])
 
     if(l1.find(elem)->data==elem)
     {
-        std::cout<<"Elemento encontrado";
+        std::cout<<"Elemento encontrado\n\n";
     }
     else
     {
         std::cout<<"Elemento no encontrado \n\n";
     }
+
+    LinkedList l2(l1);
+
+    std::cout<<l2<<'\n';
+
+    l1.reverse();
+
+    std::cout<<l1<<'\n';
     
     return 0;
 }
