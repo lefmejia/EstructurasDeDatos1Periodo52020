@@ -23,7 +23,7 @@ public:
     {}
 
     LinkedList(const std::initializer_list<TElem>& init);
-    //explicit LinkedList(const std::vector<TElem>& v);
+    explicit LinkedList(const std::vector<TElem>& v);
     LinkedList(const LinkedList& other);
 
     ~LinkedList();

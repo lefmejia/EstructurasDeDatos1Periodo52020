@@ -13,6 +13,17 @@ LinkedList<TElem>::LinkedList(const std::initializer_list<TElem>& init)
         pushBack(n);
     }
 }
+template <typename TElem>
+LinkedList<TElem>::LinkedList(const std::vector<TElem>& v)
+{
+    head = nullptr;
+    tail = nullptr;
+    size_= 0;
+    for(TElem n: v)
+    {
+        pushBack(n);
+    }
+}
 
 template <typename TElem>
 LinkedList<TElem>::LinkedList(const LinkedList<TElem>& other)
