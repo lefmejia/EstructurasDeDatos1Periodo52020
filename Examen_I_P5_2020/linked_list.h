@@ -29,6 +29,7 @@ public:
     ~LinkedList();
 
     bool operator==(const LinkedList& other) const;
+    bool operator==(const std::vector<TElem>& v) const;
 
     long size() const { return size_; }
     void pushBack(TElem data);

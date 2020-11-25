@@ -1,5 +1,7 @@
 #include <iostream>
 #include <sstream>
+
+#include <vector>
 #include "linked_list.h"
 
 template <typename TElem>
@@ -113,6 +115,25 @@ bool LinkedList<TElem>::operator==(const LinkedList& other) const
             return false;
         else if(actual1 != nullptr && actual2 ==nullptr)
             return false;
+    }
+
+    return true;
+}
+
+template <typename TElem>
+bool LinkedList<TElem>::operator==(const std::vector<TElem>& v) const
+{
+    Node* actual = head;
+
+    for(auto n: v)
+    {
+        if(actual == nullptr)
+            return false;
+            
+        if(n != actual->data)
+            return false;
+
+        actual = actual->next;
     }
 
     return true;

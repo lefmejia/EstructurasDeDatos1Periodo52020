@@ -35,7 +35,7 @@ TEST_CASE("Conversion from Vector")
     CHECK( lst.size() == 11 );
     CHECK( lst == makeList<long>({59,13,46,9,33,55,15,79,92,6,46}) );
 }
-/*
+
 // Puede comentar este TEST temporalmente
 TEST_CASE("Equal comparison to Vector")
 {
@@ -45,7 +45,7 @@ TEST_CASE("Equal comparison to Vector")
     CHECK( lst.size() == 11 );
     CHECK( lst == v );
 }
-*/
+
 TEST_CASE("pushBack operation")
 {
     LinkedList<int> lst;
