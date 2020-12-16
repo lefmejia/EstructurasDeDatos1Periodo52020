@@ -27,17 +27,17 @@ void BinarySearchTree<TElem>::Node::print()
 
 template <typename TElem>
 void BinarySearchTree<TElem>::Node::print2()
-{
-    if(left != nullptr)
-        left->print2();
+    {
+        if(left != nullptr)
+            left->print2();
 
-    cout<< data << ' ';
+        cout<< data << ' ';
 
-    if(right != nullptr)
-        right->print2();
+        if(right != nullptr)
+            right->print2();
 
-    //cout<< data <<'\n';
-}
+        //cout<< data <<'\n';
+    }
 
 template <typename TElem>
 void BinarySearchTree<TElem>::insert(TElem data)
