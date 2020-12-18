@@ -1,9 +1,11 @@
 #include <list>
+#include <algorithm>
 
 //Union
-std::list<int> AuB( std::list<int>& A, std::list<int>& B)
+template<typename TElem>
+std::list<TElem> AuB( std::list<TElem>& A, std::list<TElem>& B)
 {
-    std::list<int> aub;
+    std::list<TElem> aub;
 
     for(auto n: A)
     {
@@ -31,9 +33,10 @@ std::list<int> AuB( std::list<int>& A, std::list<int>& B)
 }
 
 //Interseccion
-std::list<int> AnB( std::list<int>& A, std::list<int>& B)
+template<typename TElem>
+std::list<TElem> AnB( std::list<TElem>& A, std::list<TElem>& B)
 {
-   std::list<int> aub;
+   std::list<TElem> aub;
 
     for(auto n: A)
     {
@@ -48,9 +51,10 @@ std::list<int> AnB( std::list<int>& A, std::list<int>& B)
 }
 
 //Diferencia
-std::list<int> AdB( std::list<int>& A, std::list<int>& B)
+template<typename TElem>
+std::list<TElem> AdB( std::list<TElem>& A, std::list<TElem>& B)
 {
-   std::list<int> aub;
+   std::list<TElem> aub;
 
     bool included = false;
 
@@ -70,4 +74,33 @@ std::list<int> AdB( std::list<int>& A, std::list<int>& B)
     }
 
     return aub;
+}
+
+
+template<typename TElem>
+bool find(TElem elem, std::list<TElem>& A)
+{
+    for(auto n: A)
+    {
+        if(n==elem)
+            return true;
+    }
+
+    return false;
+}
+
+template<typename TElem>
+void borrar(TElem elem, std::list<TElem>& A)
+{
+
+    auto it = A.begin();
+
+    for(auto i = A.begin(); i!=A.end(); i++)
+    {
+        if(*i == elem)
+            it = i;
+    }
+
+    A.erase(it);
+
 }

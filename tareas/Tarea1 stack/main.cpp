@@ -47,60 +47,7 @@ int main()
                 pila.push(n-'0');
         }
     }
-/*
-    for(int i = operacion.length()-1; i>=0; i--)
-    {
-        pila.push(operacion[i]);
-    }
 
-    resultado+= pila.top() - '0';
-    pila.pop();
-
-    while(!pila.empty())
-    {
-        switch(pila.top())
-        {
-            case '+':
-                for(auto x: numeros)
-                {
-                    resultado+= x - '0';
-                }
-                numeros = "";
-                pila.pop();
-                break;
-            case '-':
-                for(auto x: numeros)
-                {
-                    resultado-= x - '0';
-                }
-                numeros = "";
-                pila.pop();
-                break;
-            case '*':
-                for(auto x: numeros)
-                {
-                    resultado*= x - '0';
-                }
-                numeros = "";
-                pila.pop();
-                break;
-            case '/':
-                for(auto x: numeros)
-                {
-                    resultado/= x - '0';
-                }
-                numeros = "";
-                pila.pop();
-                break;
-
-        }
-        if(pila.empty())
-        break;
-
-        numeros+=pila.top();
-        pila.pop();
-    }
-*/
     std::cout<<"Resultado: "<< resultado << std::endl;
     return 0;
 }

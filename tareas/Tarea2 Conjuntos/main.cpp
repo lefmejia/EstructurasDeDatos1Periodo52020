@@ -17,6 +17,13 @@ int main()
 
     bool first=true;
 
+    if(find(2, A))
+        std::cout<<"Elemento encontrado\n";
+    else
+        std::cout<<"Elemento no encontrado\n";
+
+    borrar(7, A);
+
     std::cout<< "Lista A: {";
 
     for(auto n: A)
